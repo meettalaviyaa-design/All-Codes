@@ -1,0 +1,21 @@
+int nums[]= {1,2,2,1};
+		 int k=	1;
+		 
+		 int count=0;
+		 
+		 HashMap<Integer, Integer> hs=new HashMap<>();
+		 
+		 for(int i=0;i<nums.length;i++) {
+			 
+			 int minus=Math.abs(nums[i] + k);  // plus and after compare if present in hashmap or not 
+			 
+			 if(hs.containsKey(minus)) {
+				 count=count+hs.get(minus);
+			 }
+			 	
+			hs.put(nums[i], hs.getOrDefault(nums[i], 0) + 1);
+			
+		 }
+		
+		 
+		 System.out.println(count);
