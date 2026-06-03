@@ -1,0 +1,15 @@
+ int nums[]= {1,2,3,4,5};
+		 int k=1,m=3;
+		 int sum[]=new int[nums.length];
+		 
+		 int summ=0;
+		 
+		 for(int i=0;i<nums.length;i++) {
+			 
+			  summ+=nums[i];
+			  
+			  sum[i]=summ;
+			}
+		 
+		 int minus=sum[m]-sum[k-1];
+		 System.out.println(minus);
