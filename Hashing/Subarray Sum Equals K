@@ -1,0 +1,36 @@
+package alphadsa;
+
+import java.util.HashMap;
+
+public class raam{
+
+	 public static void main(String [] args){
+	     
+		 
+		 int array[]= {1,0,1,2,10,5};
+		 int k=3;
+		 
+		 HashMap<Integer, Integer> hs=new HashMap<>();
+		 
+		 int count=0,sum=0;
+		 
+		 hs.put(0, 1);  // put by default value bcz many time  sum-k = 0 , but sum is actully equal to k 
+		 
+		 for(int i=0;i<array.length;i++) {
+			 
+			 sum=sum+array[i]; // here add sum of array[i]
+			 
+			 if(hs.containsKey(sum-k)) { // check is sum-k is present in hashmap 
+				 count=count+hs.get(sum-k); //is present in hashmap then count value is requency of hashmap sum-k value 
+			 }
+			 
+			 hs.put(sum, hs.getOrDefault(sum, 0) + 1);  // this is for add frequency in hashmap 
+			 
+		 }
+		 
+		 System.out.println(count);
+		 
+	}
+}
+
+
