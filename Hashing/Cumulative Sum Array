@@ -1,0 +1,15 @@
+ int nums[]= {1,2,3,4,5};
+		 int k=1,m=3;
+		 int sum[]=new int[nums.length]; // Here i create same size array which is origional array size bcz store all sum 
+		 
+		 int summ=0;  
+		 
+		 for(int i=0;i<nums.length;i++) {
+			 
+			  summ+=nums[i]; // sum all array[i] index 
+			  
+			  sum[i]=summ;   // and this sum store in prefix[i] array 
+			}
+		 
+		 int minus=sum[m]-sum[k-1];  // now then given m index and k-1 index index ans ins final sum 
+		 System.out.println(minus);
