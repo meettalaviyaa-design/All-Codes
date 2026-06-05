@@ -16,6 +16,4 @@ int nums[]= {1,2,2,1};
 			hs.put(nums[i], hs.getOrDefault(nums[i], 0) + 1);
 			
 		 }
-		
-		 
-		 System.out.println(count);
+		System.out.println(count);
