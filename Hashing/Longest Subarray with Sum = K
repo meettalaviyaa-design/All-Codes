@@ -1,13 +1,10 @@
 package alphadsa;
-
 import java.util.HashMap;
 
 public class raam{
-
 	 public static void main(String [] args){
 	     
-		 
-		 int array[]= {1,2,3,1,1,1,1,4,2,3};
+	     int array[]= {1,2,3,1,1,1,1,4,2,3};
 		 int k=3;
 		 
 		 HashMap<Integer, Integer> hs=new HashMap<>();
@@ -27,7 +24,6 @@ public class raam{
 				 max=Math.max(max, i-hs.get(sum-k));
 			 }
 			 
-			 
 			 if(!hs.containsKey(sum)) {
 				 hs.put(sum, i);
 			 }
@@ -35,10 +31,6 @@ public class raam{
 		 }
 		 
 		 System.out.println(max);
-		 
-		 
-		 
-	}
+		}
 }
-
 
