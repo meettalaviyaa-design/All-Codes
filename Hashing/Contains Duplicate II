@@ -1,6 +1,6 @@
 int array[]= {1, 2, 3, 1};
 
-		 int k=3;
+		 int k=3;// randomm
 		 
 		 HashMap<Integer, Integer> hs=new HashMap<>();
 		 
