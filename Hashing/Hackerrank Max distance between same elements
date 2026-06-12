@@ -1,0 +1,31 @@
+import java.util.*;
+class Solution {
+    public int maxDistance(int[] arr) {
+        
+        HashMap<Integer,Integer> hs=new HashMap<>();
+        
+        for(int i=0;i<arr.length;i++){
+            if(hs.containsKey(arr[i])){
+                hs.put(arr[i],i);
+            }
+            else{
+                hs.put(arr[i],1);
+            }
+        }
+        
+        int finalll=0;
+        int minus=0;
+        for(int i=0;i<arr.length;i++){
+            if(hs.containsKey(arr[i]) && hs.get(arr[i]) != 1){
+                 minus=hs.get(arr[i]) - i;
+            }
+            if(minus<finalll){
+                 finalll=hs.get(arr[i]) - i;
+            }
+            minus=0;
+        }
+        
+        return finalll;
+        
+    }
+}
