@@ -1,0 +1,52 @@
+
+import java.util.*;
+class Solution {
+    public int longestConsecutive(int[] nums) {
+		 
+		if (nums.length == 0){
+             return 0;
+        } 
+        
+        ArrayList<Integer> al=new ArrayList<>();
+		 for(int i=0;i<nums.length;i++) {
+			 al.add(nums[i]);
+		 }
+		 Collections.sort(al);
+		 
+		 ArrayList<Integer> hs = new ArrayList<>();
+
+		 for (int i = 0; i < al.size(); i++) {
+		     if (i == 0 || !al.get(i).equals(al.get(i - 1))) {
+		         hs.add(al.get(i));
+		     }
+		 }
+        TreeMap<Integer, Integer> store=new TreeMap<>();
+        
+        int count=0;
+        int start=hs.get(0);
+        
+        for(int i=0;i<hs.size();i++) {
+            if(hs.get(i) == start) {
+                count++;
+                start++;
+                store.put(hs.get(i), count);
+            
+            }
+            else {
+                start=hs.get(i)+1;
+                count=1;
+                store.put(hs.get(i), count);
+            }
+        }
+		 
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<hs.size();i++) {
+            if(store.get(hs.get(i)) > max) {
+                max=store.get(hs.get(i));
+            }
+        }
+		 
+		 
+        return max;
+    }
+}
