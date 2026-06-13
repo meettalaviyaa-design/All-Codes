@@ -1,6 +1,5 @@
 int nums[]= {1,2,2,1};
 		 int k=	1;
-		 
 		 int count=0;
 		 
 		 HashMap<Integer, Integer> hs=new HashMap<>();
