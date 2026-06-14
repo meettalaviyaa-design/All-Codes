@@ -1,0 +1,30 @@
+class Solution {
+    public long subarrayXor(int arr[], int k) {
+       
+       int xr = 0;
+       int count=0;
+       HashMap<Integer,Integer> hs=new HashMap<>();
+       
+       for(int i=0;i<arr.length;i++){
+           xr=xr^arr[i];
+           
+           if(xr==k){
+               count++;
+           }
+           
+           if(hs.containsKey(xr^k)){
+               count+=hs.get(xr^k);
+           }
+           
+           if(hs.containsKey(xr)){
+               hs.put(xr,hs.get(xr)+1);
+           }
+           else{
+               hs.put(xr,1);
+           }
+           
+       }
+      return count;
+        
+    }
+}
