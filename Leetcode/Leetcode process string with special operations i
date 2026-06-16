@@ -1,0 +1,26 @@
+class Solution {
+    public String processStr(String s) {
+        
+        String store="";
+		 
+		 for(int i=0;i<s.length();i++) {
+			 
+			 if(s.charAt(i)=='#') {
+				 store=store+store;
+			 }
+			 else if(s.charAt(i) == '%') {
+				 store = new StringBuilder(store).reverse().toString();
+			 }
+			 else if(s.charAt(i) == '*') {
+				 if(store.length() > 0) {
+					 store=new StringBuilder(store).deleteCharAt(store.length()-1).toString(); 
+				 }
+			 }
+			 else {
+				 store=store+s.charAt(i);
+			 }
+		 }
+         return store;
+
+    }
+}
