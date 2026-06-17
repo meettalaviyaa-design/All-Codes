@@ -1,0 +1,48 @@
+class Solution {
+    public char processStr(String s, long k) {
+
+        int n = s.length();
+        long[] len = new long[n];
+
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+
+            if (ch == '#') {
+                len[i] = (i > 0 ? len[i - 1] * 2 : 0);
+            } 
+            else if (ch == '*') {
+                len[i] = (i > 0 ? Math.max(0, len[i - 1] - 1) : 0);
+            } 
+            else if (ch == '%') {
+                len[i] = (i > 0 ? len[i - 1] : 0);
+            } 
+            else {
+                len[i] = (i > 0 ? len[i - 1] + 1 : 1);
+            }
+        }
+
+        if (len[n - 1] == 0 || k >= len[n - 1]) return '.';
+
+        for (int i = n - 1; i >= 0; i--) {
+
+            char ch = s.charAt(i);
+
+            if (ch == '#') {
+                k = k % (len[i] / 2);
+            } 
+            else if (ch == '*') {
+                continue;
+            } 
+            else if (ch == '%') {
+                k = len[i] - 1 - k;
+            } 
+            else {
+                if (k == len[i] - 1) {
+                    return ch;
+                }
+            }
+        }
+
+        return '.';
+    }
+}
