@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Scanner;
 class Solution {
     public int largestAltitude(int[] gain) {
         int sum=0;
