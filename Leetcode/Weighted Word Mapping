@@ -17,7 +17,6 @@ class Solution {
             
             result.append(mappedChar);
         }
-        
         return result.toString();
     }
 }
