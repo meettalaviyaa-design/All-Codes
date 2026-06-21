@@ -1,0 +1,22 @@
+class Solution {
+    public int maxIceCream(int[] costs, int coins) {
+        int count=0;
+		 
+		 ArrayList<Integer> al=new ArrayList<>();
+		 for(int i=0;i<costs.length;i++) {
+			 al.add(costs[i]);
+		 }
+		 
+		 Collections.sort(al);
+		 System.out.println(al);
+		 
+		 for(int i=0;i<al.size();i++) {
+			 if(coins < al.get(i)) {
+					return count;
+			}
+			coins-=al.get(i);
+			count++;
+		 }
+		 return count;
+    }
+}
