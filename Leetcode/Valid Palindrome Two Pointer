@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        s=s.toLowerCase();
+		String store="";
+		for(int i=0;i<s.length();i++) {
+			if(Character.isLetter(s.charAt(i)) || Character.isDigit(s.charAt(i))) {
+				store+=s.charAt(i);
+			}
+		}
+
+        int i=0;
+		int j=store.length()-1;
+		
+        while(i<j) {
+			if(store.charAt(i) != store.charAt(j)) {
+				return false;
+			}
+			i++;
+			j--;
+		}
+        return true;
+    }
+}
