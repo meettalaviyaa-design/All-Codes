@@ -1,0 +1,23 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+       int last1=m;
+		int last2=n;
+		int k=nums1.length-1;
+		
+		while(last1 > 0 && last2 >0) {
+			  if(nums1[last1 - 1] > nums2[last2 - 1]) {
+			        nums1[k] = nums1[last1 - 1];
+			        last1--;  
+			    } else {
+			        nums1[k] = nums2[last2 - 1];
+			        last2--;   
+			    }
+			    k--;
+		}
+        while(last2 > 0) {
+        nums1[k] = nums2[last2 - 1];
+        last2--;
+        k--;
+    }
+    }
+}
