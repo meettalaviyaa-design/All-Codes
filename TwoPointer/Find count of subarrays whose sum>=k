@@ -1,0 +1,29 @@
+public class raam {
+    public static void main(String[] args) {
+
+        int array[] = {1,2,3};
+        int k = 3;
+        int n = array.length;
+
+        // total subarrays
+        int total = n * (n + 1) / 2;   // 3*(3+1) = 12 // 12/2 =6
+
+        int countLess = 0;
+        int sum = 0;
+
+        for(int i = 0, j = 0; j < n; j++) {
+            sum += array[j];
+
+            while(sum >= k) {
+                sum -= array[i];
+                i++;
+            }
+
+            countLess += (j - i + 1);
+        }
+
+        int result = total - countLess;   // important hai 
+
+        System.out.println(result); // 4
+    }
+}
