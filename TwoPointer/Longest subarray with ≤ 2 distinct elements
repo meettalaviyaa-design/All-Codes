@@ -1,0 +1,38 @@
+package alphadsa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+//all pending questions
+//https://www.geeksforgeeks.org/problems/largest-subnumbers-with-0-sum/1  
+
+public class raam{
+	
+	 public static void main(String [] args){
+		 
+		int array[]= {1,2,1,2,2,1,3,1,2};
+		int k=2;
+
+		HashMap<Integer, Integer> hs=new HashMap<>();
+		int max=0;
+		int finalll=0;
+		for(int i=0,j=0;j<array.length;j++) {
+			
+			 hs.put(array[j], hs.getOrDefault(array[j], 0) + 1);
+			 
+			 while(hs.size()>k) {
+				 hs.put(array[i], hs.get(array[i])-1);
+				 if(hs.get(array[i])==0) {
+					 hs.remove(array[i]);
+				 }
+				 i++;
+			 }
+			 
+			 finalll=Math.max(max, j-i+1);
+		}
+		
+		System.out.println(finalll);
+	}
+}
+
