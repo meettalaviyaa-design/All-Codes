@@ -1,0 +1,34 @@
+package alphadsa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+//all pending questions
+//https://www.geeksforgeeks.org/problems/largest-subnumbers-with-0-sum/1  
+
+public class raam{
+	
+	 public static void main(String [] args){
+		 
+		int array[]= {1,2,3,4};
+		int k=1;
+		
+		
+		long count=0;
+		for(int i=0,j=0;j<array.length;j++) {
+			
+			long minus=array[j]-array[i];
+			
+			while(minus>k) {
+				i++;
+				minus=array[j]-array[i];
+			}
+			
+			count+=j-i+1;
+		}
+		System.out.println(count-array.length);
+		
+	}
+}
+
