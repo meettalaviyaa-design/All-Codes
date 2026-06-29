@@ -1,0 +1,44 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+         int start=0;
+		 int end=nums.length-1;
+		 
+		 int store=-1;
+		 while(end>=start) {
+			 int mid= start+(end-start)/2;
+			 if(nums[mid]==target) {
+				 store=mid;
+				 end=mid-1;
+			 }
+			 else if(nums[mid] < target) {
+				 start = mid+1;
+			 }
+			 else {
+				 end = mid-1;
+			 }
+		 }
+		 
+		 int start1=0;
+		 int end1=nums.length-1;
+		 int store1=-1;
+		 
+		 while(end1>=start1) {
+			 int mid=start1+(end1-start1)/2;
+			 if(nums[mid]==target) {
+				 store1=mid;
+				 start1 = mid+1;
+			 }
+			 else if(nums[mid] < target) {
+				 start1 = mid+1;
+			 }
+			 else {
+				 end1 = mid-1;
+			 }
+		 }
+         int retarray[]=new int[2];
+            retarray[0]= store;
+            retarray[1]= store1;
+         
+         return  retarray;
+    }
+}
