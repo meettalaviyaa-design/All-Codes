@@ -1,0 +1,28 @@
+public class raam{
+	
+	 public static void main(String [] args){
+		 
+		 int arr[]= {1, 2, 5, 10};
+		 int amount = 99;
+		 Arrays.sort(arr);
+		 int last=arr.length-1;
+		 int count=0;
+		 for(int i=0;i<arr.length;i++) {
+			 
+			 int divide=amount/arr[last];
+			 
+			 if(divide>0) {
+				 count+=divide;
+				 amount-=arr[last]*divide;
+				 
+			 }
+			 if(amount<0) break;
+			 last--;
+			 
+		 }
+		 
+		 System.out.println(count);
+		 
+		 
+	 }
+}
