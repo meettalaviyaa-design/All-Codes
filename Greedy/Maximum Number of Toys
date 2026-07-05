@@ -1,15 +1,20 @@
-int budget = 50;
-		 
-		 Arrays.sort(prices);
-		 
+import java.util.Arrays;
+class Solution {
+    static int toyCount(int arr[], int k) {
+     
+      Arrays.sort(arr);
 		 int count=0;
-		 for(int i=0;i<prices.length;i++) {
-			 if(prices[i]<=budget) {
-				budget=budget-prices[i];
-				count++;
+		 
+		 for(int i=0;i<arr.length;i++) {
+			 if(arr[i]<=k) {
+				 count++;
+				 k-=arr[i];
 			 }
 			 else {
-				 break;
-			 }
+				return count;
+			}
 		 }
-		 System.out.println(count);
+     return count;
+        
+    }
+}
