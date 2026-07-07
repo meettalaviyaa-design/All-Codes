@@ -1,0 +1,23 @@
+class Solution {
+    public long sumAndMultiply(int n) {
+        long sum=0;
+	        StringBuilder sb=new StringBuilder();
+	        while(n!=0){
+	            long half=n%10;
+	            if(half!=0){
+	                sum+=half;
+	                sb.append(half);
+	               
+	            }
+	            n/=10;
+	        }
+	        
+        sb.reverse();
+        if(!sb.isEmpty()){
+            int r=Integer.parseInt(sb.toString());
+             return r*sum;
+        }
+        return 0;
+       
+    }
+}
