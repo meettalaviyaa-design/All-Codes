@@ -1,0 +1,50 @@
+class Solution {
+
+    static final int MOD = 1000000007;
+
+    public int[] sumAndMultiply(String s, int[][] queries) {
+
+        int n = s.length();
+
+        long[] pow = new long[n + 1];
+        pow[0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            pow[i] = (pow[i - 1] * 10) % MOD;
+        }
+
+        long[] digitSum = new long[n + 1];
+        long[] prefix = new long[n + 1];
+        int[] nonZeroPrefix = new int[n + 1];
+
+        for (int i = 0; i < n; i++) {
+            int d = s.charAt(i) - '0';
+
+            digitSum[i + 1] = digitSum[i] + d;
+            nonZeroPrefix[i + 1] = nonZeroPrefix[i] + (d != 0 ? 1 : 0);
+
+            if (d != 0) {
+                prefix[i + 1] = (prefix[i] * 10 + d) % MOD;
+            } else {
+                prefix[i + 1] = prefix[i];
+            }
+        }
+
+        int q = queries.length;
+        int[] ans = new int[q];
+
+        for (int i = 0; i < q; i++) {
+            int l = queries[i][0];
+            int r = queries[i][1];
+
+            long sum = digitSum[r + 1] - digitSum[l];
+            int k = nonZeroPrefix[r + 1] - nonZeroPrefix[l];
+
+            long x = (prefix[r + 1] - prefix[l] * pow[k] % MOD + MOD) % MOD;
+
+            ans[i] = (int) ((x * sum) % MOD);
+        }
+
+        return ans;
+    }
+}
