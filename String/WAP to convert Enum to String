@@ -1,0 +1,13 @@
+public class raam {
+
+	public static void main(String[] args) {
+		enum Day {
+			MONDAY, TUESDAY, WEDNESDAY
+		}
+		Day d = Day.MONDAY;
+
+		String str = d.toString();
+
+		System.out.println(str);
+	}
+}
