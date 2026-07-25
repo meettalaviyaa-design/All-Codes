@@ -1,0 +1,17 @@
+public class raam{
+	
+	public static void main(String[] args) {
+	
+		String name="this is java code yyy";
+		
+		String[] store=name.split(" ");  // String[] → multiple words ka collection (array)
+				
+		for(String word : store) {
+			
+			if (word.length() % 2 == 0) {
+                System.out.println(word);
+            }
+			
+		}
+	}
+}
