@@ -1,0 +1,49 @@
+class Solution {
+    public String smallestPalindrome(String s) {
+        StringBuilder sto = new StringBuilder();
+		
+		if(s.length()==1) {
+			return s;
+		}
+		char ch[]=new char[s.length()];
+		 int start=0;
+		 int end=s.length()-1;
+		TreeMap<Character, Integer> hm=new TreeMap<>();
+		for(int i=0;i<s.length();i++) {
+			if(hm.containsKey(s.charAt(i))) {
+				hm.put(s.charAt(i), hm.get(s.charAt(i))+1);
+			}
+			else {
+				hm.put(s.charAt(i), 1);
+			}
+		}
+		
+		System.out.println(hm);
+		for(Map.Entry<Character, Integer> e : hm.entrySet()) {
+
+		    char key = e.getKey();
+		    int value = e.getValue();
+		    
+		    while(value >= 2) {
+		        ch[start] = key;
+		        ch[end] = key;
+
+		        start++;
+		        end--;
+
+		        value -= 2;
+		    }
+		    
+		    if(value == 1) {
+		        ch[s.length()/2] = key;
+		        // value-=1;
+		    }
+		    
+		}
+		
+		for(char iiii : ch) {
+			sto.append(iiii);
+		}
+		return sto.toString();
+    }
+}
