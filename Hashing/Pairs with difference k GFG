@@ -1,0 +1,24 @@
+class Solution {
+    int countPairs(int[] arr, int k) {
+        
+       HashMap<Integer, Integer> map = new HashMap<>();
+    
+        // Step 1: frequency store karo
+        for(int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        
+        int count = 0;
+        
+        // Step 2: pairs count karo
+        for(int num : arr) {
+            int target = num + k;
+            
+            if(map.containsKey(target)) {
+                count += map.get(target);
+            }
+        }
+        
+        return count;
+        }
+}
