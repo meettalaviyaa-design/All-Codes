@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-//all pending questions
-//https://www.geeksforgeeks.org/problems/largest-subnumbers-with-0-sum/1  
-
 public class raam{
 	
 	 public static void main(String [] args){
