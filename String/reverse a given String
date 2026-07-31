@@ -9,6 +9,7 @@ public class raam{
 			copy+=name.charAt(i);
 		}
 		name=copy;
-		System.out.println(name);
+		System.out.println(name); 
+// Output 
 	}
 }
