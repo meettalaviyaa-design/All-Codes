@@ -1,0 +1,26 @@
+class Solution {
+    public int smallestNumber(int n, int t) {
+		int nn = n;
+
+		int multi = 1;
+		while (nn != 0) {
+			int temp = nn % 10;
+			multi = multi * temp;
+			nn /= 10;
+		}
+		while (true) {
+			if (multi % t == 0) {
+				return n;
+			} else {
+				n++;
+				nn = n;
+				multi = 1;
+				while (nn != 0) {
+					int temp = nn % 10;
+					multi = multi * temp;
+					nn /= 10;
+				}
+			}
+		}
+    }
+}
