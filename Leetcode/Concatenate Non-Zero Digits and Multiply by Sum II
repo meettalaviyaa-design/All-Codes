@@ -12,7 +12,6 @@ class Solution {
         for (int i = 1; i <= n; i++) {
             pow[i] = (pow[i - 1] * 10) % MOD;
         }
-
         long[] digitSum = new long[n + 1];
         long[] prefix = new long[n + 1];
         int[] nonZeroPrefix = new int[n + 1];
