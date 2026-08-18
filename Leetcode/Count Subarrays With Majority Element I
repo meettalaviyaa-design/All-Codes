@@ -10,7 +10,6 @@ class Solution {
                 if (nums[j] == target) {
                     count++;
                 }
-
                 int length = j - i + 1;
 
                 if (2 * count > length) {
