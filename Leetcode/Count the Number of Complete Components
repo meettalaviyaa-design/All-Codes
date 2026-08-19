@@ -10,7 +10,7 @@ class Solution {
             graph[e[0]].add(e[1]);
             graph[e[1]].add(e[0]);
         }
-        
+       
         boolean[] visited = new boolean[n];
         int count = 0;
         
