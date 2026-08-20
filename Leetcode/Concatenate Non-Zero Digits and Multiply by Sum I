@@ -7,7 +7,7 @@ class Solution {
 	            if(half!=0){
 	                sum+=half;
 	                sb.append(half);
-	               
+	          
 	            }
 	            n/=10;
 	        }
