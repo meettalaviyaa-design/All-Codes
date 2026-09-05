@@ -1,7 +1,7 @@
 class Solution {
 
     static final int MOD = 1000000007;
-
+ 
     public int[] sumAndMultiply(String s, int[][] queries) {
 
         int n = s.length();
