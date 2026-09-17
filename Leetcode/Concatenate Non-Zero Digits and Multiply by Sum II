@@ -5,7 +5,7 @@ class Solution {
     public int[] sumAndMultiply(String s, int[][] queries) {
 
         int n = s.length();
-
+ 
         long[] pow = new long[n + 1];
         pow[0] = 1; 
 
