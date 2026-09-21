@@ -9,7 +9,7 @@ class Solution {
             if (num % 2 == 1) {
                 hasOdd = true;
             }
-        }
+        } 
  
         // Minimum odd => always possible
         if (min % 2 == 1) {
